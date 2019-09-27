@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -75,7 +78,7 @@ class LandingScreen extends StatelessWidget {
                     SizedBox(height: 48.0),
                     GestureDetector(
                       onTap: () {
-                        Navigator.popAndPushNamed(context, '/home');
+                        return Navigator.pushNamed(context, '/home');
                       },
                       child: Container(
                         width: double.infinity,
@@ -92,7 +95,7 @@ class LandingScreen extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 24.0,
+                                fontSize: 20.0,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -101,11 +104,15 @@ class LandingScreen extends StatelessWidget {
                             ),
                             Icon(
                               Icons.arrow_forward,
-                              color: Colors.white,
+                              size: 18.0,
+                              color: Colors.white70,
                             )
                           ],
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 16.0,
                     )
                   ],
                 ),

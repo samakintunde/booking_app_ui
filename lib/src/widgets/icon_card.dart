@@ -35,7 +35,8 @@ class IconCard extends StatelessWidget {
           ),
           Text(
             text,
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
+            style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400),
+            textAlign: TextAlign.center,
           ),
         ],
       ),

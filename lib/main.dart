@@ -8,5 +8,6 @@ void main() => runApp(
         theme: theme,
         initialRoute: "/",
         onGenerateRoute: routes,
+        title: "Switch",
       ),
     );

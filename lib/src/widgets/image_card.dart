@@ -13,12 +13,14 @@ class ImageCard extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Container(
+          width: 208,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  offset: Offset(0, 12.0),
-                  blurRadius: 32.0),
+                color: Colors.black.withOpacity(0.1),
+                offset: Offset(0, 12.0),
+                blurRadius: 32.0,
+              ),
             ],
           ),
           child: ClipRRect(
@@ -27,14 +29,16 @@ class ImageCard extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/images/${place.image}',
-                  width: 208,
-                  height: 256,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     padding: const EdgeInsets.all(12.0),
-                    height: 100,
+                    alignment: Alignment.bottomLeft,
+                    height: 200,
                     width: 208,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -48,26 +52,53 @@ class ImageCard extends StatelessWidget {
                       ),
                     ),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(place.name),
+                        Text(
+                          place.name,
+                          style: Theme.of(context).textTheme.title.copyWith(
+                                color: Colors.white,
+                              ),
+                        ),
+                        SizedBox(
+                          height: 16.0,
+                        ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Row(
                               children: <Widget>[
-                                Icon(Icons.calendar_today),
+                                Icon(
+                                  Icons.calendar_today,
+                                  color: Colors.white,
+                                ),
                                 SizedBox(
                                   width: 8.0,
                                 ),
-                                Text('${place.days} days'),
+                                Text(
+                                  '${place.days} days',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
                               children: <Widget>[
-                                Icon(Icons.directions_car),
+                                Icon(
+                                  Icons.directions_car,
+                                  color: Colors.white,
+                                ),
                                 SizedBox(
                                   width: 8.0,
                                 ),
-                                Text('20 km'),
+                                Text(
+                                  '20 km',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -75,7 +106,7 @@ class ImageCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),

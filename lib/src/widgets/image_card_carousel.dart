@@ -6,7 +6,7 @@ class ImageCardCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 248.0,
+      height: 320.0,
       child: ListView.builder(
         itemCount: places.length,
         scrollDirection: Axis.horizontal,

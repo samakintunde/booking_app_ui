@@ -12,6 +12,22 @@ class LandingScreen extends StatelessWidget {
             height: double.infinity,
           ),
           Align(
+            alignment: Alignment.center,
+            child: Container(
+                height: 128.0,
+                width: 128.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(64.0)),
+                  color: Colors.white,
+                ),
+                alignment: Alignment.topCenter,
+                child: Icon(
+                  Icons.change_history,
+                  size: 108.0,
+                  color: Colors.amber,
+                )),
+          ),
+          Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: 400.0,
@@ -36,9 +52,10 @@ class LandingScreen extends StatelessWidget {
                     Text(
                       'Welcome to Switch',
                       style: TextStyle(
+                        fontFamily: 'Merriweather',
                         fontSize: 36.0,
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w900,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -48,9 +65,10 @@ class LandingScreen extends StatelessWidget {
                     Text(
                       'We will help you locate persons to switch your oversized piece of sh*t with at nearly negligible cost. We will help you locate persons to switch your oversized piece of sh*t with at nearly negligible cost.',
                       style: TextStyle(
+                        fontFamily: 'Source Sans Pro',
                         fontSize: 16.0,
                         color: Colors.white,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w500,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -63,7 +81,7 @@ class LandingScreen extends StatelessWidget {
                         width: double.infinity,
                         height: 52.0,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.amber,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(8.0))),
                         child: Row(
@@ -73,6 +91,7 @@ class LandingScreen extends StatelessWidget {
                               'LOG IN',
                               textAlign: TextAlign.center,
                               style: TextStyle(
+                                color: Colors.white,
                                 fontSize: 24.0,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -80,7 +99,10 @@ class LandingScreen extends StatelessWidget {
                             SizedBox(
                               width: 24.0,
                             ),
-                            Icon(Icons.arrow_forward)
+                            Icon(
+                              Icons.arrow_forward,
+                              color: Colors.white,
+                            )
                           ],
                         ),
                       ),
